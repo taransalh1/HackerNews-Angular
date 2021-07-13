@@ -1,0 +1,44 @@
+@import "../../../styles/utilities.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/colors.scss";
+.hn-header {
+  background-color: $reddyOrange;
+  padding: 2px;
+  @include hn-flex-row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  @include heading-large;
+  .hn-header-left {
+    @include hn-flex-row;
+    flex-wrap: nowrap;
+    gap: 4px;
+    .hn-logo {
+      @include hn-flex-row;
+      align-items: center;
+      img {
+        border: 1px white solid;
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+      }
+    }
+    .hn-navigation-bar {
+      @include hn-flex-row;
+      @include hn-flex-row;
+      gap: 4px;
+      .logo-title {
+        margin-right: 6px;
+      }
+      @media screen and (max-width:478px) {
+      padding: 4px;
+      }
+    }
+  }
+  .hn-auth-bar {
+    padding: 4px;
+  }
+  a {
+    color: $tooBlack;
+    text-decoration: none;
+  }
+}

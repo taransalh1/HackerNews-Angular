@@ -1,0 +1,9 @@
+<div class="story-wrapper">
+  <app-story-view-item
+    [showAddComments]="false"
+    [showOtherComments]="false"
+    *ngFor="let story of topstories; let i = index"
+    [id]="i + 1"
+    [storyId]="story"
+  ></app-story-view-item>
+</div>

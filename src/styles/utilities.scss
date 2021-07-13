@@ -1,0 +1,18 @@
+// This file contains all the general utilities classes
+
+@mixin hn-flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@mixin hn-flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.hn-ai-center {
+  align-items: center;
+}
+.hn-jc-center {
+  justify-content: center;
+}

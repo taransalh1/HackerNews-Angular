@@ -1,0 +1,24 @@
+<div class="story-comment animated fast fadeIn" *ngIf="commentData">
+  <div class="votearrow"></div>
+  <a href="">{{ commentData.by }}</a>
+  <a href="">{{ commentData.timeString }}</a>
+  <div class="expander" (click)="showComments = !showComments">
+    <span>[</span>{{showComments?'-' :(commentData.kids?commentData.kids.length:1)+' more'
+    }}<span>]</span>
+  </div>
+</div>
+<div class="comment-details animated fast fadeIn" *ngIf="showComments">
+  <div
+    class="comment-text"
+    *ngIf="commentData"
+    [innerHtml]="commentData.text"
+  ></div>
+  <!-- void as functionality not implemented -->
+  <a *ngIf="commentData" href="javascript:void(0)" class="comment-reply">reply</a>
+  <div class="child-comments" *ngIf="commentData && commentData.kids">
+    <app-story-comment-view
+      *ngFor="let comment of commentData.kids"
+      [commentId]="comment"
+    ></app-story-comment-view>
+  </div>
+</div>

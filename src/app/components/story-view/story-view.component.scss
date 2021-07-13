@@ -1,0 +1,76 @@
+@import "../../../styles/utilities.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/colors.scss";
+
+.story {
+  @include hn-flex-row;
+  @include heading-large;
+  color: $gray;
+  align-items: baseline;
+  @media screen and (max-width: 478px) {
+    flex-wrap: nowrap;
+    gap: 2px;
+    @include heading-comment-mobile;
+  }
+  .votearrow {
+    width: 10px;
+    height: 10px;
+    border: 0px;
+    margin: 3px 2px 6px;
+    background: url(../../../assets/grayarrow.gif) no-repeat;
+    &.margin-4 {
+      margin-right: 6px;
+    }
+  }
+  .story-title {
+    @include hn-flex-column;
+    gap: 2px;
+    .title-main {
+      color: $tooBlack;
+      line-height: 16px;
+      .storyLink {
+        color: $gray;
+        font-size: 8pt;
+        cursor: pointer;
+      }
+    }
+    .title-sub {
+      @include heading-sub;
+      a {
+        text-decoration: none;
+        color: $gray;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span{
+        cursor: pointer;
+      }
+    }
+    .new-comment {
+      max-width: 300px;
+      margin-top: 12px;
+      @include hn-flex-column;
+      gap: 12px;
+      button {
+        max-width: 100px;
+        cursor: pointer;
+      }
+      textarea {
+        width: 400px;
+        @media screen and (max-width: 478px) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+.story-other-comments {
+  margin-top: 50px;
+  margin-right: 20px;
+  @media screen and (max-width: 478px) {
+    margin-right: 0px;
+  }
+  gap: 10px;
+  @include hn-flex-column;
+}

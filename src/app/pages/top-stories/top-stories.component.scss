@@ -1,0 +1,11 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/utilities.scss";
+
+.story-wrapper {
+  padding: 10px 8px;
+  background-color: $lightGray;
+  @include hn-flex-column;
+  flex-wrap: nowrap;
+  gap: 6px;
+}

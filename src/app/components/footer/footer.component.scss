@@ -1,0 +1,30 @@
+
+@import "../../../styles/utilities.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/colors.scss";
+.hn-footer{
+  @include hn-flex-column;
+  height: 100px;
+  background-color: $lightGray;
+  border-top: 2px solid $reddyOrange;
+  gap:10px;
+  align-items: center;
+  justify-content: space-around;
+  @include heading-large;
+  .advert{
+    cursor: pointer;
+  }
+  .site-map{
+    a{
+    text-decoration: none;
+    @include heading-comment;
+    color: $tooBlack;
+    cursor: not-allowed;
+    }
+  }
+  .search-bar{
+    input{
+      max-width: 150px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// this class contains all the text element classes
+@mixin heading-large {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13.3px;
+  line-height: 12px;
+}
+
+@mixin heading-comment-mobile{
+  font-size: 15px;
+  line-height: 19px;
+}
+
+@mixin heading-sub {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 9px;
+  @media screen and (max-width:478px) {
+    font-size: 12px;
+  }
+}
+
+@mixin heading-comment {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 11px;
+}

@@ -1,0 +1,22 @@
+<div class="userdetail-wrapper animated fast fadeIn" *ngIf="userData">
+  <div class="data-row">
+    <div class="label">user:</div>
+    <div class="value link">{{userData.id}}</div>
+  </div>
+  <div class="data-row">
+    <div class="label">created:</div>
+    <div [routerLink]="['/user', userData.id]" class="value link">{{userData.created | date:'MMMM d, y'}}</div>
+  </div>
+  <div class="data-row">
+    <div class="label">karma:</div>
+    <div class="value">{{userData.karma}}</div>
+  </div>
+  <div class="data-row">
+    <div class="label">about:</div>
+    <div class="value flex-values">
+      <span>submissions</span>
+      <span>comments</span>
+      <span>favorites</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="story animated fast fadeIn" *ngIf="storyData">
+  <div *ngIf="id" class="id">{{ id }}.</div>
+  <div
+    class="votearrow"
+    [ngClass]="{ 'margin-4': showAddComments == true }"
+  ></div>
+  <div class="story-title">
+    <div class="title-main">
+      {{ storyData.title }}
+      <a *ngIf="storyData.url" [href]="storyData.url" target="_blank" class="storyLink"
+        >({{ getBaseUrl(storyData.url) }})</a
+      >
+    </div>
+    <div class="title-sub">
+      {{ storyData.score }} points by
+      <a [routerLink]="['/user', storyData.by]">{{ storyData.by }} </a>
+      <a [routerLink]="['/story', storyData.id]">{{ storyData.timeString }}</a>
+      | <span>hide </span> |
+      <a [routerLink]="['/story', storyData.id]">
+        {{ storyData.descendants }} comments
+      </a>
+    </div>
+    <div *ngIf="showAddComments" class="new-comment">
+      <textarea name="text" rows="6"  ></textarea>
+      <button>add comment</button>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="showOtherComments == true && storyData && storyData.kids"
+  class="story-other-comments animated fast fadeIn"
+>
+  <app-story-comment-view
+    *ngFor="let comment of storyData.kids"
+    [commentId]="comment"
+  ></app-story-comment-view>
+</div>

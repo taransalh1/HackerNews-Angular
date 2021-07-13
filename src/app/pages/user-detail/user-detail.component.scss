@@ -1,0 +1,32 @@
+@import "../../../styles/utilities.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/colors.scss";
+
+.userdetail-wrapper {
+  padding: 10px 8px 50px 8px;
+  background-color: $lightGray;
+  @include hn-flex-column;
+  flex-wrap: nowrap;
+  gap: 10px;
+  @include heading-large;
+  .data-row {
+    @include hn-flex-row;
+    color: $gray;
+    .label {
+      min-width: 60px;
+    }
+    .value {
+      &.link {
+        cursor: pointer;
+      }
+      &.flex-values{
+        @include hn-flex-column;
+        gap:10px;
+        text-decoration: underline;
+        color: $tooBlack;
+        cursor: not-allowed;//Because Not Implemented
+      }
+
+    }
+  }
+}
